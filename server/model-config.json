@@ -10,11 +10,9 @@
       "loopback/common/mixins",
       "loopback/server/mixins",
       "../common/mixins",
+      "../node_modules/loopback-disable-all-remote-methods-mixin",
       "./mixins"
     ]
-  },
-  "User": {
-    "dataSource": "db"
   },
   "AccessToken": {
     "dataSource": "db",
@@ -34,5 +32,9 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "user": {
+    "dataSource": "mydb",
+    "public": true
   }
 }
