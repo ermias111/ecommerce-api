@@ -2,5 +2,11 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mydb": {
+    "host": "db",
+    "port": 27017,
+    "name": "mydb",
+    "connector": "mongodb"
   }
 }
