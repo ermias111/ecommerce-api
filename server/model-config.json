@@ -36,5 +36,9 @@
   "user": {
     "dataSource": "mydb",
     "public": true
+  },
+  "item": {
+    "dataSource": "mydb",
+    "public": true
   }
 }

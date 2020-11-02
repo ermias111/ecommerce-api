@@ -3,13 +3,13 @@
   "plural": "users",
   "base": "User",
   "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
   "mixins": {
     "DisableAllRemoteMethods": {
       "active": true
     }
-  },
-  "options": {
-    "validateUpsert": true
   },
   "properties": {
     "name": {
