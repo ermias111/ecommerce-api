@@ -28,7 +28,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "cart-item": {
+      "type": "belongsTo",
+      "model": "cart-item",
+      "foreignKey": "cartItemId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [
     {
       "accessType": "EXECUTE",

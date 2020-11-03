@@ -4,7 +4,8 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "mixins": {
     "DisableAllRemoteMethods": {
@@ -13,7 +14,13 @@
   },
   "properties": {},
   "validations": [],
-  "relations": {},
+  "relations": {
+    "cart-items": {
+      "type": "hasMany",
+      "model": "cart-item",
+      "foreignKey": ""
+    }
+  },
   "acls": [
     {
       "accessType": "EXECUTE",
@@ -27,6 +34,20 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "cartDetails"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "addItems"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "removeItem"
     },
     {
       "accessType": "*",
@@ -54,6 +75,54 @@
       "http": {
         "path": "/cart-details",
         "verb": "get"
+      }
+    },
+    "addItems": {
+      "accepts": [
+        {
+          "arg": "access_token",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "cart-items",
+          "type": "array"
+        }
+      ],
+      "returns": {
+        "root": true,
+        "description": ""
+      },
+      "description": "Add multiple cart-items to a given cart",
+      "http": {
+        "path": "/add-items",
+        "verb": "post"
+      }
+    },
+    "removeItem": {
+      "accepts": [
+        {
+          "arg": "access_token",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        },
+        {
+          "arg": "cartItemId",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "root": true,
+        "description": ""
+      },
+      "description": "removes a given cart item from a cart",
+      "http": {
+        "path": "/remove-item",
+        "verb": "post"
       }
     }
   }

@@ -44,5 +44,9 @@
   "cart": {
     "dataSource": "mydb",
     "public": true
+  },
+  "cart-item": {
+    "dataSource": "mydb",
+    "public": true
   }
 }

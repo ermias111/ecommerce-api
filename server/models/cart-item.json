@@ -1,0 +1,26 @@
+{
+  "name": "cart-item",
+  "plural": "cart-items",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "quantity": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    }
+  },
+  "validations": [],
+  "relations": {
+    "item": {
+      "type": "hasOne",
+      "model": "item",
+      "foreignKey": "cartItemId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
