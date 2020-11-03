@@ -1,0 +1,60 @@
+{
+  "name": "cart",
+  "plural": "cart",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "DisableAllRemoteMethods": {
+      "active": true
+    }
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "cartDetails"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "cartDetails": {
+      "accepts": [
+        {
+          "arg": "access_token",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": {
+        "root": true,
+        "description": "return cart information"
+      },
+      "description": "Fetches details about a cart for a user",
+      "http": {
+        "path": "/cart-details",
+        "verb": "get"
+      }
+    }
+  }
+}
