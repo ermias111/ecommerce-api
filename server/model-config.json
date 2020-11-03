@@ -47,6 +47,6 @@
   },
   "cart-item": {
     "dataSource": "mydb",
-    "public": true
+    "public": false
   }
 }

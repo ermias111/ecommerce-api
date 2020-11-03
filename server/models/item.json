@@ -34,7 +34,7 @@
       "model": "cart-item",
       "foreignKey": "cartItemId",
       "options": {
-        "nestRemoting": true
+        "nestRemoting": false
       }
     }
   },
