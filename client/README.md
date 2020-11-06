@@ -1,8 +1,10 @@
 ## startup
 
-run docker-compose up --build to build the services
+run the following commands on your terminal     
 
-run docker-compose up to run the project
+    docker-compose up --build (to build the services)
+
+    docker-compose up (to run the project)
 
 then browse to http://localhost:5000/explorer/#/ to access the api
 
