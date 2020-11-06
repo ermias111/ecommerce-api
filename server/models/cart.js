@@ -15,7 +15,7 @@ module.exports = function (Cart) {
                             },
                             include: ['cart-items']
                         }, (err, cart) => {
-                            console.log(err, cart)
+                            // console.log(err, cart)
                             callback(err, cart)
                         })
                     }
