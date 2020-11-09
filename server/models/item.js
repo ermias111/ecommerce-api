@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(Item) {
+    // return price ordered items 
     Item.beforeRemote('find', function(ctx, unused, next) {
         if (ctx.args.filter) {
             if (ctx.args.filter.order) {
